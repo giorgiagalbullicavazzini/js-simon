@@ -32,21 +32,28 @@ function addClass(element, className) {
 // Main
 ////////////
 
-// With the click of a button, the user can generate 5 random numbers
 const play = document.querySelector('.play');
 const randomNumbers = 5;
+const numbersContainer = document.querySelector('.random-numbers');
+const timer = 30;
 
 play.addEventListener('click', function() {
-  const randomSequence = randomArray(randomNumbers, 1, 100);
-  console.log(randomSequence);
-
   // After the click of the button, the button disappears
   addClass(play, 'hidden');
+
+  // With the click of a button, the user can generate 5 random numbers
+  const randomSequence = randomArray(randomNumbers, 1, 100);
+
+  // When the array is shown on the user screen, a timer starts
+  // After some seconds, the array disappears
+  numbersContainer.innerText = randomSequence;
+  setTimeout(function() {
+    addClass(numbersContainer, 'hidden');
+  }, timer * 1000);
 })
 
 
-// When the array is shown on the user screen, a timer starts
-// With a setTimeout function, we can then hide the numbers after 30 seconds
+
 // After 1 more second, 5 prompt appears
 // The prompts ask the user to type the array numbers in the correct order
 // IF the prompt value is not a number, the prompt appears again
