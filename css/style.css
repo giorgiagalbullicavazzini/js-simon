@@ -29,7 +29,7 @@ body {
   background-color: gainsboro;
   border-bottom: 2px solid lightsalmon;
   border-radius: 1.5625rem 0rem 1.5625rem 0rem;
-  height: 18.75rem;
+  height: 20rem;
   width: 31.25rem;
 }
 
@@ -77,6 +77,36 @@ Main
 ===========
 */
 
-.random-numbers {
-  
+.numbers span {
+  border-radius: 50%;
+  font-size: 1.25rem;
+  line-height: 5rem;
+  margin: .625rem;
+  padding: 1.25rem;
+}
+
+.random-numbers span {
+  background-color: lightsalmon;
+}
+
+.user-inputs span {
+  background-color: lightseagreen;
+}
+
+.results span {
+  margin: .75rem;
+}
+
+.results span.red {
+  color: red;
+  font-size: 1.6rem;
+}
+
+.results span.green {
+  color: green;
+  font-size: 1.4rem;
+}
+
+.win-condition {
+  font-size: 18px;
 }
