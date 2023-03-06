@@ -28,6 +28,20 @@ function addClass(element, className) {
   element.classList.add(className);
 }
 
+// A function to check if two arrays are equal
+function equalArrays (value, array1, array2) {
+  let result = true;
+
+  for (let i = 0; i < value; i++) {
+    if (array1[i] !== array2[i]) {
+      result = false;
+      return result;
+    }
+  }
+
+  return result;
+}
+
 ////////////
 // Main
 ////////////
@@ -35,7 +49,7 @@ function addClass(element, className) {
 const play = document.querySelector('.play');
 const randomNumbers = 5;
 const numbersContainer = document.querySelector('.random-numbers');
-const timer = 30;
+const timer = 1;
 
 play.addEventListener('click', function() {
   // After the click of the button, the button disappears
@@ -69,14 +83,7 @@ play.addEventListener('click', function() {
     }
 
     // With a for loop we can check if the arrays are equal or not
-    let result = true;
-
-    for (let i = 0; i < 5; i++) {
-      if (randomSequence[i] !== userSequence[i]) {
-        result = false;
-        break;
-      }
-    }
+    const result = equalArrays(randomNumbers, randomSequence, userSequence);
 
     // At the end of the game, the software generates the results
     if (result === false) {
