@@ -28,6 +28,11 @@ function addClass(element, className) {
   element.classList.add(className);
 }
 
+// A function to remove a class to an element
+function removeClass(element, className) {
+  element.classList.remove(className);
+}
+
 // A function to check if two arrays are equal
 function equalArrays (value, array1, array2) {
   const result = [];
@@ -86,20 +91,31 @@ play.addEventListener('click', function() {
     // With a for loop we can check if the arrays are equal or not
     const correctAnswers = equalArrays(randomNumbers, randomSequence, userSequence);
 
-    // At the end of the game, the software generates the results
-    if (correctAnswers.includes('No')) {
-      console.log('Hai perso!');
-    } else {
-      console.log('Hai vinto!');
-    }
-
-    // The results contain the number of correct prompts
+    // With another loop we can count the user points
     let points = 0;
     for (let i = 0; i < correctAnswers.length; i++) {
       if (correctAnswers[i] === 'Sì') {
         points += 1;
       }
     }
-    console.log(points);
+
+    removeClass(numbersContainer, 'hidden');
+    
+    const inputsContainer = document.querySelector('.user-inputs');
+    inputsContainer.innerText = userSequence;
+
+    const resultsContainer = document.querySelector('.results');
+    resultsContainer.innerText = correctAnswers;
+
+    const winCondition = document.querySelector('.win-condition');
+
+    // At the end of the game, the software generates the results
+    if (correctAnswers.includes('No') && points === 0) {
+      winCondition.innerText = 'Hai totalizzato 0 punti, ma puoi sempre riprovare!';
+    } else if (correctAnswers.includes('No')) {
+      winCondition.innerText = `Hai perso, ma hai comunque totalizzato un punteggio di ${points}. Riprova!`;
+    } else {
+      winCondition.innerText = 'Complimenti, hai vinto! Sei un vero pro player!';
+    }
   }, (timer + 1) * 1000);
 })
