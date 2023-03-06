@@ -35,7 +35,7 @@ function addClass(element, className) {
 const play = document.querySelector('.play');
 const randomNumbers = 5;
 const numbersContainer = document.querySelector('.random-numbers');
-const timer = 30;
+const timer = 1;
 
 play.addEventListener('click', function() {
   // After the click of the button, the button disappears
@@ -50,16 +50,29 @@ play.addEventListener('click', function() {
   setTimeout(function() {
     addClass(numbersContainer, 'hidden');
   }, timer * 1000);
+
+  // With another empty array, we can save the user inputs
+  const userSequence = [];
+
+  // After 1 more second, 5 prompt appears
+  setTimeout(function() {
+    // The loop ends when this array contains exactly 5 numbers
+    while (userSequence.length < 5) {
+      // The prompts ask the user to type the array numbers in the correct order
+      const userInput = Number(prompt(`Inserisci il ${userSequence.length + 1}° numero`));
+      if (!isNaN(userInput)) {
+        userSequence.push(userInput);
+      } else {
+        // IF the prompt value is not a number, the prompt appears again
+        alert('Devi inserire un numero!');
+      }
+    }
+  }, (timer + 1) * 1000);
 })
 
 
 
-// After 1 more second, 5 prompt appears
-// The prompts ask the user to type the array numbers in the correct order
-// IF the prompt value is not a number, the prompt appears again
 // To check if the user values are the same of the ones contained in the array, we can use another while loop
-// This loop creates another array and contains the 5 prompts
-// The loop ends when this array contains exactly 5 numbers
 // With a for loop we can then check if the arrays are equal or not
 // At the end of the game, the software generates the results
 // The results contain the correct string and the number of correct prompts
