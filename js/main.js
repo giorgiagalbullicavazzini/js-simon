@@ -35,7 +35,7 @@ function addClass(element, className) {
 const play = document.querySelector('.play');
 const randomNumbers = 5;
 const numbersContainer = document.querySelector('.random-numbers');
-const timer = 1;
+const timer = 30;
 
 play.addEventListener('click', function() {
   // After the click of the button, the button disappears
@@ -51,7 +51,7 @@ play.addEventListener('click', function() {
     addClass(numbersContainer, 'hidden');
   }, timer * 1000);
 
-  // With another empty array, we can save the user inputs
+  // To check if the user values are the same of the ones contained in the array, we can use another while loop
   const userSequence = [];
 
   // After 1 more second, 5 prompt appears
@@ -67,12 +67,26 @@ play.addEventListener('click', function() {
         alert('Devi inserire un numero!');
       }
     }
+
+    // With a for loop we can check if the arrays are equal or not
+    let result = true;
+
+    for (let i = 0; i < 5; i++) {
+      if (randomSequence[i] !== userSequence[i]) {
+        result = false;
+        break;
+      }
+    }
+
+    // At the end of the game, the software generates the results
+    if (result === false) {
+      console.log('Hai perso!');
+    } else {
+      console.log('Hai vinto!');
+    }
   }, (timer + 1) * 1000);
 })
 
 
 
-// To check if the user values are the same of the ones contained in the array, we can use another while loop
-// With a for loop we can then check if the arrays are equal or not
-// At the end of the game, the software generates the results
 // The results contain the correct string and the number of correct prompts

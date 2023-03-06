@@ -11,7 +11,7 @@
 - After 1 more second, 5 prompt appears;
 - The prompts ask the user to type the array numbers in the correct order;
 - IF the prompt value is not a number, the prompt appears again;
-- To check if the user values are the same of the ones contained in the array, we can use another `while` loop;
+- To check if the user values are the same of the ones contained in the array, we can use a `while` loop;
 - This loop creates another array and contains the 5 prompts;
 - The loop ends when this array contains exactly 5 numbers;
 - With a `for` loop we can then check if the arrays are equal or not;
