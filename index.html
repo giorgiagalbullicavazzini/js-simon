@@ -7,27 +7,38 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Simon Says</title>
 
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+
   <!-- CSS -->
   <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-  <!-- Play -->
-  <button type="button" class="play">Gioca</button>
-  <!-- // Play -->
-
-  <!-- Random numbers -->
-  <div class="random-numbers"></div>
-  <!-- // Random numbers -->
-
-  <!-- User inputs -->
-  <div class="user-inputs"></div>
-  <!-- // User inputs -->
-
-  <!-- Results -->
-  <div class="results"></div>
-  <div class="win-condition"></div>
-  <!-- // Results -->
+  <div class="container-big flex align-center justify-center">
+    <div class="container flex align-center justify-center">
+      <!-- Play -->
+      <button type="button" class="play">Gioca</button>
+      <!-- // Play -->
+    
+      <div class="container-small flex align-center justify-center">
+        <!-- Random numbers -->
+        <div class="random-numbers"></div>
+        <!-- // Random numbers -->
+      
+        <!-- User inputs -->
+        <!-- <div class="user-inputs"></div> -->
+        <!-- // User inputs -->
+      
+        <!-- Results -->
+        <!-- <div class="results"></div>
+        <div class="win-condition"></div> -->
+        <!-- // Results -->
+      </div>
+    </div>
+  </div>
 
   <!-- JS -->
   <script src="js/main.js"></script>

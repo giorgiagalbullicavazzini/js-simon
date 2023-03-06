@@ -55,7 +55,7 @@ function equalArrays (value, array1, array2) {
 const play = document.querySelector('.play');
 const randomNumbers = 5;
 const numbersContainer = document.querySelector('.random-numbers');
-const timer = 30;
+const timer = 1;
 
 play.addEventListener('click', function() {
   // After the click of the button, the button disappears

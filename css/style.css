@@ -1,4 +1,8 @@
-/* Reset */
+/*
+===========
+Reset
+===========
+*/
 
 * {
   box-sizing: border-box;
@@ -6,8 +10,73 @@
   padding: 0;
 }
 
-/* Common */
+/*
+===========
+Container
+===========
+*/
+
+body {
+  background-color: antiquewhite;
+  font-family: 'Roboto', sans-serif;
+}
+
+.container-big {
+  height: 100vh;
+}
+
+.container {
+  background-color: gainsboro;
+  border-bottom: 2px solid lightsalmon;
+  border-radius: 1.5625rem 0rem 1.5625rem 0rem;
+  height: 18.75rem;
+  width: 31.25rem;
+}
+
+.container-small {
+  flex-direction: column;
+  height: inherit;
+  text-align: center;
+}
+
+/*
+===========
+Common
+===========
+*/
+
+.align-center {
+  align-items: center;
+}
+
+.flex {
+  display: flex;
+}
 
 .hidden {
   display: none;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+button {
+  background-color: lightsalmon;
+  border: none;
+  box-shadow: 0rem .125rem .25rem .0625rem #121212;
+  color: #121212;
+  font-family: inherit;
+  font-size: 1.125rem;
+  padding: .625rem 1.5625rem;
+}
+
+/*
+===========
+Main
+===========
+*/
+
+.random-numbers {
+  
 }
