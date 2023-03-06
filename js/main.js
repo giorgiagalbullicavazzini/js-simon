@@ -30,12 +30,13 @@ function addClass(element, className) {
 
 // A function to check if two arrays are equal
 function equalArrays (value, array1, array2) {
-  let result = true;
+  const result = [];
 
   for (let i = 0; i < value; i++) {
     if (array1[i] !== array2[i]) {
-      result = false;
-      return result;
+      result.push('No');
+    } else {
+      result.push('Sì');
     }
   }
 
@@ -83,17 +84,22 @@ play.addEventListener('click', function() {
     }
 
     // With a for loop we can check if the arrays are equal or not
-    const result = equalArrays(randomNumbers, randomSequence, userSequence);
+    const correctAnswers = equalArrays(randomNumbers, randomSequence, userSequence);
 
     // At the end of the game, the software generates the results
-    if (result === false) {
+    if (correctAnswers.includes('No')) {
       console.log('Hai perso!');
     } else {
       console.log('Hai vinto!');
     }
+
+    // The results contain the number of correct prompts
+    let points = 0;
+    for (let i = 0; i < correctAnswers.length; i++) {
+      if (correctAnswers[i] === 'Sì') {
+        points += 1;
+      }
+    }
+    console.log(points);
   }, (timer + 1) * 1000);
 })
-
-
-
-// The results contain the correct string and the number of correct prompts
